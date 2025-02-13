@@ -33,5 +33,3 @@ image = image.resize((image.width*scale_factor, image.height*scale_factor), resa
 image.show()
 text = pytesseract.image_to_string(image)
 print(text)
-print(re.match(r"Date\s+", text))
-print(text[5:])

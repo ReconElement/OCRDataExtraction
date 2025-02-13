@@ -10,6 +10,7 @@ def extract_text(filename: str) -> str:
     cwd = os.getcwd() #gets the current directory
     imagepath = str(cwd + r"\dataset_documents")
     os.chdir(imagepath)
+    print(imagepath)
     #converts the pdf into image
     if(filename.endswith('.pdf')):
         image = convert_from_path(fr'{filename}',300, poppler_path=r"C:\Program Files\poppler-24.08.0\Library\bin")
@@ -40,4 +41,5 @@ def extract_text(filename: str) -> str:
     text = pytesseract.image_to_string(image)
     return text
 
-text = extract_text("data1.pdf")
+# text = extract_text("data1.pdf")
+# print(text)
